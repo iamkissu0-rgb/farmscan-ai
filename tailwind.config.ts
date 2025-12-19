@@ -57,33 +57,60 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        health: {
+          good: "hsl(var(--health-good))",
+          moderate: "hsl(var(--health-moderate))",
+          poor: "hsl(var(--health-poor))",
+        },
+        cream: "hsl(var(--cream))",
+        forest: "hsl(var(--forest))",
+        earth: "hsl(var(--earth))",
+        leaf: "hsl(var(--leaf))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "calc(var(--radius) + 4px)",
+        "2xl": "calc(var(--radius) + 8px)",
+        "3xl": "calc(var(--radius) + 16px)",
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
+        "bounce-soft": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" },
+        },
+        "spin-slow": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-slow": "pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "bounce-soft": "bounce-soft 2s ease-in-out infinite",
+        "spin-slow": "spin-slow 3s linear infinite",
+      },
+      boxShadow: {
+        "soft": "0 4px 20px -4px hsl(var(--foreground) / 0.1)",
+        "soft-lg": "0 8px 30px -8px hsl(var(--foreground) / 0.15)",
+        "glow": "0 0 30px hsl(var(--primary) / 0.3)",
       },
     },
   },
